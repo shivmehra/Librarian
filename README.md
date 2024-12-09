@@ -32,7 +32,7 @@ There might be features that support multiple users with different authority lev
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/devparanjay/librasic.git
+git clone https://github.com/shivmehra/Librarian.git
 ```
 
 2. Navigate to the project directory:
