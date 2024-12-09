@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Return Book - Librasic</title>
+<link href="{{url_for('static', filename='css/new-issue.css')}}" rel='stylesheet'>
+
+
+{% endblock base_head %}
+
+{% block main_body %}
+
+<div class="container-fluid">
+    <div class="container">
+        <form method="post" class="new_issue_form" id="returnBookForm">
+            <div class="mb-3 row">
+                <label for="issue_record_id" class="col-4 col-form-label">Issue Record ID</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" name="issue_record_id" id="issue_record_id"
+                        placeholder="Issue Record ID" />
+                </div>
+                <div class="mb-3 row">
+                    <div class="offset-sm-4 col-sm-8">
+                        <button type="submit" class="btn btn-primary">
+                            Return Book
+                        </button>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+</div>
+<script>
+    document.getElementById('returnBookForm').addEventListener('submit', function (e) {
+        var issueRecordId = document.getElementById('issue_record_id').value;
+        this.action = '/return-book/' + issueRecordId;
+    });
+</script>
+
+{% endblock main_body %}
